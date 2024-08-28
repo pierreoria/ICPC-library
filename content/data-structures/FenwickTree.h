@@ -1,34 +1,51 @@
 /**
- * Author: Lukas Polacek
- * Date: 2009-10-30
+ * Author: Pierre Oriá
+ * Date: 2024-08-28
  * License: CC0
- * Source: folklore/TopCoder
- * Description: Computes partial sums a[0] + a[1] + ... + a[pos - 1], and updates single elements a[i],
- * taking the difference between the old and new value.
+ * Source: codeforces/sdnr1 blog
+ * Description: 1-based range sums, point increments. lower bound in O(log n)
  * Time: Both operations are $O(\log N)$.
- * Status: Stress-tested
+ * Status: tested: SWERC 2023 - K
  */
 #pragma once
 
-struct FT {
-	vector<ll> s;
-	FT(int n) : s(n) {}
-	void update(int pos, ll dif) { // a[pos] += dif
-		for (; pos < sz(s); pos |= pos + 1) s[pos] += dif;
-	}
-	ll query(int pos) { // sum of values in [0, pos)
-		ll res = 0;
-		for (; pos > 0; pos &= pos - 1) res += s[pos-1];
-		return res;
-	}
-	int lower_bound(ll sum) {// min pos st sum of [0, pos] >= sum
-		// Returns n if no sum is >= sum, or -1 if empty sum is.
-		if (sum <= 0) return -1;
-		int pos = 0;
-		for (int pw = 1 << 25; pw; pw >>= 1) {
-			if (pos + pw <= sz(s) && s[pos + pw-1] < sum)
-				pos += pw, sum -= s[pos-1];
-		}
-		return pos;
-	}
-};
+const int mx = 4e6+6;
+const int LOGN = 22; // teto(log(mx))
+int n, bit[mx]; // 1-based: raiz é 1
+
+int bit_search(int v) // busca por valor, não por range; equivalente a lower bound
+{
+    int sum = 0;
+    int pos = 0;
+    
+    for(int i = LOGN; i>=0; i--) 
+    {
+        if(pos + (1 << i) <= n and sum + bit[pos + (1 << i)] < v) // <= n, n numero de elementos
+        {
+            sum += bit[pos + (1 << i)];
+            pos += (1 << i);
+        }
+    }
+
+    return pos + 1; // +1 because 'pos' will have position of largest value less than 'v'
+}
+
+// incremento, NÃO é equivalente a arr[idx] = v. guardar array original se preciso
+void increment(int idx, ll v) 
+{ 
+    while(idx <= n) {
+        bit[idx] += v;
+        idx += idx & -idx;
+    }
+}
+
+int query (int idx) 
+{ 
+    int ans = 0;
+    while(idx > 0) {
+        ans += bit[idx];
+        idx -= idx & -idx;
+    }
+
+    return ans;
+}
