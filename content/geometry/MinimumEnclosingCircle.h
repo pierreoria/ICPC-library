@@ -1,28 +1,32 @@
 /**
- * Author: Andrew He, chilli
- * Date: 2019-05-07
- * License: CC0
- * Source: folklore
  * Description: Computes the minimum circle that encloses a set of points.
  * Time: expected O(n)
  * Status: stress-tested
  */
 #pragma once
-
-#include "circumcircle.h"
-
-pair<P, double> mec(vector<P> ps) {
-	shuffle(all(ps), mt19937(time(0)));
-	P o = ps[0];
-	double r = 0, EPS = 1 + 1e-8;
-	rep(i,0,sz(ps)) if ((o - ps[i]).dist() > r * EPS) {
-		o = ps[i], r = 0;
-		rep(j,0,i) if ((o - ps[j]).dist() > r * EPS) {
-			o = (ps[i] + ps[j]) / 2;
-			r = (o - ps[i]).dist();
-			rep(k,0,j) if ((o - ps[k]).dist() > r * EPS) {
-				o = ccCenter(ps[i], ps[j], ps[k]);
-				r = (o - ps[i]).dist();
+double ccRadius(P& A, P& B, P& C) {
+  return len(B, A)*len(C,B)*len(A,C)/
+      abs(cross((B-A), (C-A)))/2.0;
+}
+ 
+P ccCenter(P& A, P& B, P& C) {
+  P b = C-A, c = B-A;
+  return A + perp(b*dist2(c)-c*dist2(b))/cross(b, c)/2;
+}
+mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
+pair<P, double> mec(vector<P>& pts){
+	shuffle(begin(pts),end(pts),rng);
+	P o = pts[0];
+	const double EPSS = 1+1e-8;
+	double r = 0;
+	for(int i = 0; i < pts.size(); i++) if(len(o, pts[i]) > r * EPSS){
+		o = pts[i], r = 0;
+		for(int j = 0; j < i; j++) if(len(o, pts[j]) > r * EPSS){
+			o = (pts[i]+pts[j])/2.0;
+			r = len(o, pts[i]);
+			for(int k = 0; k < j; k++) if(len(o, pts[k]) > r * EPSS){
+				o = ccCenter(pts[i],pts[j],pts[k]);
+				r = len(o, pts[i]);
 			}
 		}
 	}
