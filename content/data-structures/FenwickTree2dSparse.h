@@ -61,7 +61,7 @@ struct BIT2D {
 /*LATEX_DESC_BEGIN***************************
 **Sparse Binary Indexed Tree 2D**
 
-Recebe o conjunto de pontos que serão usados para fazer os updates e as queries e cria uma BIT 2D esparsa que independe do "tamanho do grid".
+Recebe o conjunto de pontos que serao usados para fazer os updates e as queries e cria uma BIT 2D esparsa que independe do "tamanho do grid".
 
 **Build:** O(N Log N) (N -> Quantidade de Pontos)
 **Query/Update:** O(Log N) 
