@@ -1,3 +1,8 @@
+/**
+ * Author: 
+ * Description: 
+ */
+
 struct segTree {
     
     int n; 
