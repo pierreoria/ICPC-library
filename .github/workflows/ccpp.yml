@@ -18,3 +18,9 @@ jobs:
       run: sudo apt-get install texlive-latex-base texlive-latex-recommended texlive-latex-extra
     - name: Build pdf
       run: make kactl
+    - name: Salvar o PDF pra baixar
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: justBITit-KACTL
+        path: kactl.pdf
