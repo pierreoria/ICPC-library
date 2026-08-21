@@ -3,13 +3,9 @@
  * Date: 2026-08-21
  * License: CC0
  * Source: AI.Cash https://codeforces.com/blog/entry/18051
- * Description: low constant factors, 2*n memory iterative seg tree
-  source: 
-  0-based, [l,r) type queries
-  seg[n] to seg[2n-1] corresponds to array[0] to array[n-1]
-  
-  for N != 2^k, cannot be used as is for efficient binary search, as there will be more than one root 
-                (see https://codeforces.com/contest/1354/submission/80923473)
+ * Description: low constant factors, 2n memory iterative seg tree
+ *              0-based, [l,r) type queries
+ *              seg[n] to seg[2n-1] corresponds to array[0] to array[n-1]
  */
 #pragma once
 
