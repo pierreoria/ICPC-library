@@ -1,3 +1,8 @@
+/**
+ * Author: 
+ * Description: 
+ */
+
 const int MAXN = 1e5 + 5;
 const int LG = 18;
 int v[MAXN];
