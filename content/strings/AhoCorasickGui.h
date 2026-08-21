@@ -1,3 +1,8 @@
+/**
+ * Author: 
+ * Description: 
+ */
+
 const int ALPHA = 26, off = 'a';
 struct Node {
     int p, sl, ol;
