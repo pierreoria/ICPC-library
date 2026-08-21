@@ -1,3 +1,8 @@
+/**
+ * Author: 
+ * Description: 
+ */
+
 const int N = 20;
 ll dp[1<<N], iVal[1<<N];
 
