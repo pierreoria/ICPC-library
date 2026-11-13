@@ -1,0 +1,15 @@
+PWD /Users/primovocatus/Documents/ICPC/ICPC-library/content
+INPUT /usr/local/texlive/2026/texmf.cnf
+INPUT /usr/local/texlive/2026/texmf-dist/web2c/texmf.cnf
+INPUT /usr/local/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt
+INPUT /Users/primovocatus/Documents/ICPC/ICPC-library/content/kactl.tex
+OUTPUT kactl.log
+INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/extsizes/extreport.cls
+INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/extsizes/extreport.cls
+INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/extsizes/size9.clo
+INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/extsizes/size9.clo
+INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/extsizes/size9.clo
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/cm/cmr9.tfm
+INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/base/exscale.sty
+INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/base/exscale.sty

@@ -3,29 +3,42 @@
  * Date: 2017-10-31
  * License: CC0
  * Source: folklore
- * Description: Zero-indexed max-tree. Bounds are inclusive to the left and exclusive to the right.
- * Can be changed by modifying T, f and unit.
+ * Description: 
  * Time: O(\log N)
  * Status: stress-tested
  */
 #pragma once
 
-struct Tree {
-	typedef int T;
-	static constexpr T unit = INT_MIN;
-	T f(T a, T b) { return max(a, b); } // (any associative fn)
-	vector<T> s; int n;
-	Tree(int n = 0, T def = unit) : s(2*n, def), n(n) {}
-	void update(int pos, T val) {
-		for (s[pos += n] = val; pos /= 2;)
-			s[pos] = f(s[pos * 2], s[pos * 2 + 1]);
-	}
-	T query(int b, int e) { // query [b, e)
-		T ra = unit, rb = unit;
-		for (b += n, e += n; b < e; b /= 2, e /= 2) {
-			if (b % 2) ra = f(ra, s[b++]);
-			if (e % 2) rb = f(s[--e], rb);
+struct {
+	vector<long long> t;
+	int n;
+
+	void build(const vector<int>& arr) {
+		n = arr.size();
+		tree.assign(2 * n, 0);
+		for (int i = 0; i < n; i++)
+			tree[n + i] = arr[i];
+		for (int i = n - 1; i > 0; i--) {
+			tree[i] = tree[i << 1] + tree[i << 1 | 1];
 		}
-		return f(ra, rb);
 	}
-};
+
+	void update(int pos, int val) { // arr[pos] := val
+		pos += n; tree[pos] = val; pos >>= 1;
+		while (pos > 0) {
+			tree[pos] = tree[pos << 1] + tree[(pos << 1) | 1];
+			pos >>= 1;
+		}
+	}
+
+	long long get(int l, int r) { // [l, r)
+		l += n; r += n;
+		long long ans = 0;
+		while (l < r) {
+			if (l & 1) ans += tree[l++];
+			if (r & 1) ans += tree[--r];
+			l >>= 1; r >>= 1;
+		}
+		return ans;
+	}
+} T;

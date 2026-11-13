@@ -2,35 +2,40 @@
 \usepackage{kactlpkg}
 \kactlcontentdir{content}
 
-\university{UFPE}{Universidade Federal de Pernambuco}{justBITit.jpeg}
-\team{just BIT it}{Guilherme Maranhão, João Luís Agra, Pierre Oriá}
+\university{BSUIR}{Belarusian State University of Informatics and Radioelectronics}{/Users/primovocatus/Documents/ICPC/ICPC-library/content/logo.jpg}
+\team{There is nothing we can do?}{Vitali Ermakou, Andrii Korobko, Artem Kotsur}
+
+\lhead{\small BSUIR (Ermakou, Korobko, Kotsur)}
+\chead{}
+\rhead{\thepage}
+
 % \contest{ACM-ICPC World Finals 2017}{May 24, 2017}
 \contest{\ }{\today}
-% \enablecolors
+\enablecolors
 
 \begin{document}
-	\maketeampage
+	% \maketeampage
 	% Small KACTL header on the first page:
 	% \maketitle{``One Last Time'' Edition}{\today}
 	\begin{multicols*}{3}
-	\thispagestyle{fancy}
 	% Table of contents, without subsections:
 	\setcounter{tocdepth}{0}
 	\tableofcontents
+	\thispagestyle{fancy}
 
-	\kactlchapter{contest}
+	% \kactlchapter{contest}
 	\kactlchapter{math}
-	\kactlchapter{data-structures}
-	\kactlchapter{numerical}
-	\kactlchapter{number-theory}
 	\kactlchapter{combinatorial}
-	\kactlchapter{graph}
-	\kactlchapter{geometry}
+	\kactlchapter{number-theory}
+	\kactlchapter{data-structures}
 	\kactlchapter{strings}
-	\kactlchapter{various}
+	% \kactlchapter{numerical}
+	% \kactlchapter{graph}
+	% \kactlchapter{geometry}
+	% \kactlchapter{various}
 	\end{multicols*}
 
-	\begin{multicols*}{3}
-	\kactlchapter{appendix}
-	\end{multicols*}
+	% \begin{multicols*}{3}
+	% \kactlchapter{appendix}
+	% \end{multicols*}
 \end{document}

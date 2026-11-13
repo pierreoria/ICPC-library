@@ -1,0 +1,19 @@
+# Fdb version 4
+["pdflatex"] 1793269724.86621 "/Users/primovocatus/Documents/ICPC/ICPC-library/content/kactl.tex" "kactl.pdf" "kactl" 1793269724.97402 2
+  "/Users/primovocatus/Documents/ICPC/ICPC-library/content/kactl.tex" 1793269724.44054 1130 42f1aefb9ff47c912f4eda5500cb74a6 ""
+  "/usr/local/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
+  "/usr/local/texlive/2026/texmf-dist/fonts/tfm/public/cm/cmr9.tfm" 1136768653 1292 6b21b9c2c7bebb38aa2273f7ca0fb3af ""
+  "/usr/local/texlive/2026/texmf-dist/tex/latex/base/exscale.sty" 1761946296 2581 e3b93c96ce990e6e2ffc819a28b77ea9 ""
+  "/usr/local/texlive/2026/texmf-dist/tex/latex/extsizes/extreport.cls" 1137110130 23786 cbd79291aa0922c48a73753b97cabb5f ""
+  "/usr/local/texlive/2026/texmf-dist/tex/latex/extsizes/size9.clo" 1137110130 6172 b9daf86befd6903b2699dddbd6fb97c1 ""
+  "/usr/local/texlive/2026/texmf-dist/web2c/texmf.cnf" 1770478701 43630 e9fa012910491fe5ae08a72c3c2997a7 ""
+  "/usr/local/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt" 1791748874 3636774 08d6f42f2a334abe000d9e5858d504b5 ""
+  "/usr/local/texlive/2026/texmf.cnf" 1774209515 577 648cd9f92f9c0eac486f4c71c85cfbbe ""
+  "kactl.aux" 1793269716.86588 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "kactl.tex" 1793269724.44054 1130 42f1aefb9ff47c912f4eda5500cb74a6 ""
+  "kactlpkg.sty" 0 -1 0 ""
+  (generated)
+  "kactl.aux"
+  "kactl.log"
+  "kactl.pdf"
+  (rewritten before read)
